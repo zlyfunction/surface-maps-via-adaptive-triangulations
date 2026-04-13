@@ -114,8 +114,10 @@ target_link_libraries(SurfaceMaps PUBLIC
     imgui
     glow-extras
     TinyAD
-    stdc++fs
 )
+if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    target_link_libraries(SurfaceMaps PUBLIC stdc++fs)
+endif()
 
 # ===============================================
 # Target apps (Executables)

@@ -260,7 +260,8 @@ void metric_mapping_distortion(const TriMesh& _mesh_1,
             min_distortion = 1.0;
             max_distortion = 1.0;
         }
-        if (iszero(min_distortion)){
+        if (min_distortion == 0.0)
+        {
             ISM_WARNING("min distortion zero!");
             min_distortion = 1.0;
             max_distortion = 1.0;
